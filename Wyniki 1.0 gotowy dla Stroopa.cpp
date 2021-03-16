@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include<string.h>
 
-	struct  wyniki_Stroop{ // Poszczególne kolumny to: liczba porzadkowa, l1, l2, l3, l4, czas
+	struct  wyniki_Stroop{ // PoszczegÃ³lne kolumny to: liczba porzadkowa, l1, l2, l3, l4, czas
 		int liczba_porzadkowa;
 		char id[256];
 		int wyniki[4][40];
@@ -36,7 +36,7 @@ i++;
 }
 fclose(fptr);
 
-// Koniec czêœci pierwszej: upload listy adresów.
+// Koniec czÄ™Å›ci pierwszej: upload listy adresÃ³w.
 
 struct wyniki_Stroop wynik[i]; //Zadeklarowana tablica struktur z wynikami
 int n;
@@ -76,7 +76,7 @@ for (int lzbioru = 0, lp = 1; lzbioru < i-1; lzbioru++)
 
 printf("Zbior nr %i \nNazwa: [%s]\nLp.\tl1\tl2\tl3\tl4\tczas:\n", wynik[lzbioru].liczba_porzadkowa, wynik[lzbioru].id);	//napisz adres
 	
-	for(int x = 0; x <= lzadan; x++) // stala liczba przykladow dla danej gry; nie wiem czemu to dzia³a xD
+	for(int x = 0; x <= lzadan; x++) // stala liczba przykladow dla danej gry; nie wiem czemu to dziaÅ‚a xD
 	{
 		while ( fscanf(dane[lzbioru ], "%*s %*s %*s %i %i %i %i %i", &wynik[lzbioru].wyniki[0][x], 
 															&wynik[lzbioru].wyniki[1][x],
@@ -123,25 +123,6 @@ printf("Zbior nr %i \nNazwa: [%s]\nLp.\tl1\tl2\tl3\tl4\tczas:\n", wynik[lzbioru]
 	
 	printf("\n ===Utworzono pliki wynikow.===\n\n");
 	
-	/*
-int suma;
-
-for (int n = 0; n < i-1; n++)
-{
-	wynik[n].srednia = 0;
-	wynik[n].dobre_odp = 0;
-	for (int m = 0; m <= lzadan; m++)
-	{
-		printf("Suma dobrych odp dla %i: %i\n", n, wynik[n].dobre_odp);
-		printf("Suma do sredniej dla %i: %i\n\n", n, wynik[n].dobre_odp);
-		wynik[n].dobre_odp = wynik[n].dobre_odp + wynik[n].wyniki[1][m]; 
-		wynik[n].srednia = wynik[n].dobre_odp + wynik[n].wyniki[4][m];
-	}
-	wynik[n].srednia = wynik[n].srednia / lzadan;
-	printf("Zbior %i.\nIlosc dobrych trafien: %iSredni czas: %d\n\n", wynik[n].liczba_porzadkowa, wynik[n].dobre_odp, wynik[n].srednia);
-}
-
-*/
 
 	   return 0;
 }
